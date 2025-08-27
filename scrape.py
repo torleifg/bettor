@@ -5,15 +5,25 @@ def scrape_table():
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
+        page.set_default_timeout(5000)
 
         # Navigate to the page
         page.goto("https://www.norsk-tipping.no/sport/tipping/spill?day=3")
 
-        # Wait for the table to appear (adjust the selector as needed)
-        page.wait_for_selector("table")
+        try:
+            accept_button = page.get_by_role("button", name="Godta alle", exact=True)
+            accept_button.click()
+            accept_button.wait_for(state="hidden")
+            print("Successfully accepted cookies.")
+        except:
+            print("No cookie pop-up found or already handled.")
 
-        is_checked = page.get_by_text("Ekspert").is_checked()
+        page.click('[for=choose-tips-EXPERTS]')
+
+        is_checked = page.get_by_label("Ekspert").is_checked()
         print(f"Expert tips? {is_checked}")
+
+        page.screenshot(path="example.png")
 
         # Extract data from each row in the table body
         data = []
