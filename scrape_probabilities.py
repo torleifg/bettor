@@ -1,15 +1,8 @@
-from enum import Enum
 from typing import Annotated
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import Page
 from pydantic import BaseModel, Field, model_validator
 from typing_extensions import Self
-
-
-class Coupon(Enum):
-    MIDWEEK = 3
-    SATURDAY = 1
-    SUNDAY = 2
 
 
 class Team(BaseModel):
@@ -34,52 +27,34 @@ class Match(BaseModel):
     probability: Probability
 
 
-def scrape_table(coupon: Coupon) -> list[Match]:
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page()
-        page.set_default_timeout(5000)
+def scrape_table(page: Page) -> list[Match]:
+    page.click('[for=choose-tips-EXPERTS]')
 
-        url = f"https://www.norsk-tipping.no/sport/tipping/spill?day={coupon.value}"
-        page.goto(url)
+    is_checked = page.get_by_label("Ekspert").is_checked()
+    print(f"Expert tips? {is_checked}")
 
-        try:
-            accept_button = page.get_by_role("button", name="Godta alle", exact=True)
-            accept_button.click()
-            accept_button.wait_for(state="hidden")
-            print("Successfully accepted cookies.")
-        except:
-            print("No cookie pop-up found or already handled.")
+    # page.screenshot(path="example.png")
 
-        page.click('[for=choose-tips-EXPERTS]')
+    matches = []
+    rows = page.locator("table tbody tr:not([aria-hidden='true'])").all()
 
-        is_checked = page.get_by_label("Ekspert").is_checked()
-        print(f"Expert tips? {is_checked}")
+    for row in rows:
+        match_cells = row.locator("th button div span").nth(0)
+        teams = match_cells.inner_text().split(' – ')
 
-        # page.screenshot(path="example.png")
+        probabilities_cells = row.locator("td div fieldset label span span").all()
+        probability = Probability(
+            home_win=int(probabilities_cells[0].inner_text()),
+            tie=int(probabilities_cells[1].inner_text()),
+            away_win=int(probabilities_cells[2].inner_text())
+        )
 
-        matches = []
-        rows = page.locator("table tbody tr:not([aria-hidden='true'])").all()
+        match = Match(
+            home_team=Team(name=teams[0].split(' ', 1)[1]),
+            away_team=Team(name=teams[1]),
+            probability=probability
+        )
 
-        for row in rows:
-            match_cells = row.locator("th button div span").nth(0)
-            teams = match_cells.inner_text().split(' – ')
+        matches.append(match)
 
-            probabilities_cells = row.locator("td div fieldset label span span").all()
-            probability = Probability(
-                home_win=int(probabilities_cells[0].inner_text()),
-                tie=int(probabilities_cells[1].inner_text()),
-                away_win=int(probabilities_cells[2].inner_text())
-            )
-
-            match = Match(
-                home_team=Team(name=teams[0].split(' ', 1)[1]),
-                away_team=Team(name=teams[1]),
-                probability=probability
-            )
-
-            matches.append(match)
-
-        browser.close()
-
-        return matches
+    return matches
