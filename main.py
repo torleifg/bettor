@@ -1,15 +1,7 @@
-from enum import Enum
-
 from playwright.sync_api import sync_playwright
 
+from models import Coupon
 from scrape_probabilities import scrape_table
-
-
-class Coupon(Enum):
-    MIDWEEK = 3
-    SATURDAY = 1
-    SUNDAY = 2
-
 
 if __name__ == '__main__':
     with sync_playwright() as p:
@@ -17,7 +9,7 @@ if __name__ == '__main__':
         page = browser.new_page()
         page.set_default_timeout(5000)
 
-        url = f"https://www.norsk-tipping.no/sport/tipping/spill?day={Coupon.MIDWEEK.value}"
+        url = f"https://www.norsk-tipping.no/sport/tipping/spill?day={Coupon.SUNDAY.value}"
         page.goto(url)
 
         try:
