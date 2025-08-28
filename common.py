@@ -38,6 +38,15 @@ class ExpectedValue(BaseModel):
     tie: float
     away_win: float
 
+    def is_greater_than(self, baseline: float) -> bool:
+        return (self.home_win > baseline) or (self.tie > baseline) or (self.away_win > baseline)
+
+
+class BetFraction(BaseModel):
+    home_win: Optional[float] = None
+    tie: Optional[float] = None
+    away_win: Optional[float] = None
+
 
 class Match(BaseModel):
     home_team: Team
@@ -46,6 +55,7 @@ class Match(BaseModel):
     probability: Probability
     odds: Optional[Odds] = None
     expected_value: Optional[ExpectedValue] = None
+    bet_fraction: Optional[BetFraction] = None
 
     def teams_string(self) -> str:
         return f"{self.home_team.name} - {self.away_team.name}"

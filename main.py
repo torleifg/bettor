@@ -4,10 +4,11 @@ from typing import List
 
 from playwright.sync_api import sync_playwright
 
-import compute_expected_value
+import expected_value
+import kelly_criterion
+import odds
+import probability
 from common import Coupon, Match
-from scrape_odds import scrape_search
-from scrape_probabilities import scrape_table
 
 
 def run_scrape(coupon: Coupon, day: int):
@@ -27,7 +28,7 @@ def run_scrape(coupon: Coupon, day: int):
 
         time.sleep(1)
 
-        matches = scrape_table(page)
+        matches = probability.scrape(page)
 
         page.goto("https://www.norsk-tipping.no/sport/oddsen")
         page.wait_for_selector("body")
@@ -37,7 +38,7 @@ def run_scrape(coupon: Coupon, day: int):
         for match in matches:
             print("----------------------------------------")
             print(match.teams_string())
-            scrape_search(page, match, day)
+            odds.scrape(page, match, day)
             time.sleep(1)
 
         print("----------------------------------------")
@@ -58,12 +59,27 @@ def run_expected_value():
         with open(filename, "r") as f:
             loaded_data = json.load(f)
 
-        for item in loaded_data:
-            matches.append(Match.model_validate(item))
+        for data in loaded_data:
+            matches.append(Match.model_validate(data))
 
         for match in matches:
-            compute_expected_value.compute(match)
+            expected_value.compute(match)
             print(match)
+
+        print("------------------------")
+
+        bets: List[Match] = []
+
+        for match in matches:
+            if match.expected_value is not None and match.expected_value.is_greater_than(0.05):
+                bets.append(match)
+
+        bets.sort(key=lambda it: max(it.expected_value.home_win, it.expected_value.tie, it.expected_value.away_win),
+                  reverse=True)
+
+        for bet in bets:
+            kelly_criterion.compute(bet)
+            print(bet)
 
     except FileNotFoundError:
         print(f"'Could not find {filename}'.")
@@ -73,8 +89,6 @@ def run_expected_value():
         print(f"An unexpected error occurred: {e}")
 
 
-
-
 if __name__ == '__main__':
-    # run_scrape(Coupon.MIDWEEK, 28)
+    #run_scrape(Coupon.MIDWEEK, 28)
     run_expected_value()

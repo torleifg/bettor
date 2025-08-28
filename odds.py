@@ -3,7 +3,7 @@ from playwright.sync_api import Page, TimeoutError
 from common import Match, Odds
 
 
-def scrape_search(page: Page, match: Match, day: int):
+def scrape(page: Page, match: Match, day: int):
     iframe_locator = page.locator("#sportsbookid")
     iframe_locator.wait_for()
 
