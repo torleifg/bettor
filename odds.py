@@ -26,7 +26,7 @@ def scrape(page: Page, match: Match, day: int):
             iframe.locator("#search-event-list-container").wait_for()
             print(f"Search results found for away team: {match.away_team.name}")
         except TimeoutError:
-            print(f"No search results found for away team: {match.teams_string()}")
+            print(f"No search results found for away team: {match.away_team.name}")
             return None
 
     search_results_locator = iframe.locator('div[role="listitem"]')

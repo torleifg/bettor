@@ -90,5 +90,5 @@ def run_expected_value():
 
 
 if __name__ == '__main__':
-    #run_scrape(Coupon.MIDWEEK, 28)
+    #run_scrape(Coupon.SATURDAY, 30)
     run_expected_value()
