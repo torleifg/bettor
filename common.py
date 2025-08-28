@@ -33,12 +33,19 @@ class Odds(BaseModel):
     away_win: Annotated[float, Field(ge=1.0)]
 
 
+class ExpectedValue(BaseModel):
+    home_win: float
+    tie: float
+    away_win: float
+
+
 class Match(BaseModel):
     home_team: Team
     away_team: Team
     date_time: Optional[str] = None
     probability: Probability
     odds: Optional[Odds] = None
+    expected_value: Optional[ExpectedValue] = None
 
     def teams_string(self) -> str:
         return f"{self.home_team.name} - {self.away_team.name}"

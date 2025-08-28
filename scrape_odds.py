@@ -3,7 +3,7 @@ from playwright.sync_api import Page, TimeoutError
 from common import Match, Odds
 
 
-def scrape_search(page: Page, match: Match):
+def scrape_search(page: Page, match: Match, day: int):
     iframe_locator = page.locator("#sportsbookid")
     iframe_locator.wait_for()
 
@@ -34,20 +34,24 @@ def scrape_search(page: Page, match: Match):
 
     print(f"Found {len(search_results)} search results.")
 
-    if not search_results:
-        return match
+    target_locator = None
 
-    search_result = search_results[0]
+    for search_result in search_results:
+        info_locator = search_result.locator("span span")
+        info = info_locator.all()
 
-    info_locator = search_result.locator("span span")
-    info = info_locator.all()
+        teams = info[1].inner_text()
+        date = info[2].inner_text()
 
-    teams = info[1].inner_text()
-    date = info[2].inner_text()
+        if str(day) in date:
+            match.date_time = date.rstrip(".")
+            target_locator = iframe.locator(f'div[role="listitem"]:has-text("{teams}")')
 
-    match.date_time = date.rstrip(".")
+    if not target_locator:
+        print(f"No match found with {day} in the date.")
+        search_input_locator.clear()
+        return None
 
-    target_locator = iframe.locator(f'div[role="listitem"]:has-text("{teams}")')
     target_locator.click()
 
     iframe.locator("h1").wait_for()

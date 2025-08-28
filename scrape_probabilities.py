@@ -1,9 +1,11 @@
+from typing import List
+
 from playwright.sync_api import Page
 
 from common import Match, Probability, Team
 
 
-def scrape_table(page: Page) -> list[Match]:
+def scrape_table(page: Page) -> List[Match]:
     page.click('[for=choose-tips-EXPERTS]')
 
     is_checked = page.get_by_label("Ekspert").is_checked()
