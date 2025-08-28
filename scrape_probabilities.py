@@ -1,6 +1,6 @@
 from playwright.sync_api import Page
 
-from models import Match, Probability, Team
+from common import Match, Probability, Team
 
 
 def scrape_table(page: Page) -> list[Match]:
@@ -9,25 +9,30 @@ def scrape_table(page: Page) -> list[Match]:
     is_checked = page.get_by_label("Ekspert").is_checked()
     print(f"Expert tips? {is_checked}")
 
-    # page.screenshot(path="example.png")
-
     matches = []
     rows = page.locator("table tbody tr:not([aria-hidden='true'])").all()
 
     for row in rows:
-        match_cells = row.locator("th button div span").nth(0)
-        teams = match_cells.inner_text().split(' – ')
+        teams_locator = row.locator("th button div span").nth(0)
+        teams = teams_locator.inner_text().split(' – ')
 
-        probabilities_cells = row.locator("td div fieldset label span span").all()
+        probability_locators = row.locator("td div fieldset label span span").all()
+        home_win = int(probability_locators[0].inner_text())
+        tie = int(probability_locators[1].inner_text())
+        away_win = int(probability_locators[2].inner_text())
+
         probability = Probability(
-            home_win=int(probabilities_cells[0].inner_text()),
-            tie=int(probabilities_cells[1].inner_text()),
-            away_win=int(probabilities_cells[2].inner_text())
+            home_win=home_win,
+            tie=tie,
+            away_win=away_win
         )
 
+        home_team = Team(name=teams[0].split(' ', 1)[1])
+        away_team = Team(name=teams[1])
+
         match = Match(
-            home_team=Team(name=teams[0].split(' ', 1)[1]),
-            away_team=Team(name=teams[1]),
+            home_team=home_team,
+            away_team=away_team,
             probability=probability
         )
 

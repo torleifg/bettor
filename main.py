@@ -1,6 +1,9 @@
+import time
+
 from playwright.sync_api import sync_playwright
 
-from models import Coupon
+from common import Coupon
+from scrape_odds import scrape_search
 from scrape_probabilities import scrape_table
 
 if __name__ == '__main__':
@@ -9,20 +12,33 @@ if __name__ == '__main__':
         page = browser.new_page()
         page.set_default_timeout(5000)
 
-        url = f"https://www.norsk-tipping.no/sport/tipping/spill?day={Coupon.SUNDAY.value}"
-        page.goto(url)
+        page.goto(f"https://www.norsk-tipping.no/sport/tipping/spill?day={Coupon.MIDWEEK.value}")
+        page.wait_for_selector("body")
 
-        try:
-            accept_button = page.get_by_role("button", name="Godta alle", exact=True)
-            accept_button.click()
-            accept_button.wait_for(state="hidden")
-            print("Successfully accepted cookies.")
-        except:
-            print("No cookie pop-up found or already handled.")
+        time.sleep(1)
+
+        cookies = page.get_by_role("button", name="Godta alle", exact=True)
+        cookies.click()
+        cookies.wait_for(state="hidden")
+
+        time.sleep(1)
 
         matches = scrape_table(page)
 
+        page.goto("https://www.norsk-tipping.no/sport/oddsen")
+        page.wait_for_selector("body")
+
+        time.sleep(1)
+
         for match in matches:
-            print(match)
+            print("----------------------------------------")
+            print(match.teams_string())
+            scrape_search(page, match)
+            time.sleep(1)
+
+        print("----------------------------------------")
+
+        for match in matches:
+            print(match.model_dump())
 
         browser.close()

@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Annotated
+from typing import Annotated, Optional
 
 from pydantic import BaseModel, Field, model_validator
 from typing_extensions import Self
@@ -27,7 +27,18 @@ class Probability(BaseModel):
         return self
 
 
+class Odds(BaseModel):
+    home_win: Annotated[float, Field(ge=1.0)]
+    tie: Annotated[float, Field(ge=1.0)]
+    away_win: Annotated[float, Field(ge=1.0)]
+
+
 class Match(BaseModel):
     home_team: Team
     away_team: Team
+    date_time: Optional[str] = None
     probability: Probability
+    odds: Optional[Odds] = None
+
+    def teams_string(self) -> str:
+        return f"{self.home_team.name} - {self.away_team.name}"
