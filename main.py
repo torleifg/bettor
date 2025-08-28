@@ -1,3 +1,4 @@
+import json
 import time
 
 from playwright.sync_api import sync_playwright
@@ -38,7 +39,8 @@ if __name__ == '__main__':
 
         print("----------------------------------------")
 
-        for match in matches:
-            print(match.model_dump())
+        output_data_dicts = [match.model_dump() for match in matches]
+        with open("matches.json", "w") as f:
+            json.dump(output_data_dicts, f, indent=4)
 
         browser.close()
