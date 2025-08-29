@@ -1,3 +1,4 @@
+from datetime import datetime
 from enum import Enum
 from typing import Annotated, Optional
 
@@ -51,7 +52,8 @@ class BetFraction(BaseModel):
 class Match(BaseModel):
     home_team: Team
     away_team: Team
-    date_time: Optional[str] = None
+    match_time: Optional[datetime] = None
+    scrape_time: datetime = datetime.now()
     probability: Probability
     odds: Optional[Odds] = None
     expected_value: Optional[ExpectedValue] = None

@@ -7,7 +7,5 @@ venv/
 
 *.png
 
-*.json
-
 .DS_store
 .python-version

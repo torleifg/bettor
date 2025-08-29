@@ -1,17 +1,17 @@
 import json
 import time
-from typing import List
 
 from playwright.sync_api import sync_playwright
+from pydantic.json import pydantic_encoder
 
 import expected_value
 import kelly_criterion
 import odds
 import probability
-from common import Coupon, Match
+from common import Coupon
 
 
-def run_scrape(coupon: Coupon, day: int):
+def run(coupon: Coupon, day: int):
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
@@ -38,57 +38,29 @@ def run_scrape(coupon: Coupon, day: int):
         for match in matches:
             print("----------------------------------------")
             print(match.teams_string())
+
             odds.scrape(page, match, day)
             time.sleep(1)
 
-        print("----------------------------------------")
+        for match in matches:
+            expected_value.compute(match)
+            kelly_criterion.compute(match)
 
-        output_data_dicts = [match.model_dump() for match in matches]
-        with open("matches.json", "w") as f:
-            json.dump(output_data_dicts, f, indent=4)
+        matches.sort(key=sort_key, reverse=True)
+
+        filename = f"matches_{matches[0].match_time.strftime('%Y%m%d')}_{matches[0].scrape_time.strftime('%Y%m%d')}.json"
+
+        with open(filename, "w") as f:
+            json.dump(matches, f, default=pydantic_encoder)
 
         browser.close()
 
 
-def run_expected_value():
-    filename = "matches.json"
-
-    matches: List[Match] = []
-
-    try:
-        with open(filename, "r") as f:
-            loaded_data = json.load(f)
-
-        for data in loaded_data:
-            matches.append(Match.model_validate(data))
-
-        for match in matches:
-            expected_value.compute(match)
-            print(match)
-
-        print("------------------------")
-
-        bets: List[Match] = []
-
-        for match in matches:
-            if match.expected_value is not None and match.expected_value.is_greater_than(0.05):
-                bets.append(match)
-
-        bets.sort(key=lambda it: max(it.expected_value.home_win, it.expected_value.tie, it.expected_value.away_win),
-                  reverse=True)
-
-        for bet in bets:
-            kelly_criterion.compute(bet)
-            print(bet)
-
-    except FileNotFoundError:
-        print(f"'Could not find {filename}'.")
-    except json.JSONDecodeError:
-        print(f"Could not decode JSON from '{filename}'.")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+def sort_key(match):
+    if match.expected_value:
+        return max(match.expected_value.home_win, match.expected_value.tie, match.expected_value.away_win)
+    return -1
 
 
 if __name__ == '__main__':
-    #run_scrape(Coupon.SATURDAY, 30)
-    run_expected_value()
+    run(Coupon.SATURDAY, 30)

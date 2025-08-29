@@ -2,6 +2,9 @@ from common import Match, BetFraction
 
 
 def compute(match: Match):
+    if match.expected_value is None or not match.expected_value.is_greater_than(0.05):
+        return None
+
     home_win = formula(match.expected_value.home_win, match.odds.home_win)
     tie = formula(match.expected_value.tie, match.odds.tie)
     away_win = formula(match.expected_value.away_win, match.odds.away_win)
