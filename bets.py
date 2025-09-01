@@ -32,13 +32,13 @@ if __name__ == '__main__':
             continue
 
         if match.expected_value.home_win > 0:
-            bets.append(Bet(home_team=match.home_team.name, away_team=match.away_team.name, result=Result.H,
+            bets.append(Bet(home_team=match.home_team.name, away_team=match.away_team.name, prediction=Result.H,
                             expected_value=match.expected_value.home_win, bet_fraction=match.bet_fraction.home_win))
         if match.expected_value.tie > 0:
-            bets.append(Bet(home_team=match.home_team.name, away_team=match.away_team.name, result=Result.T,
+            bets.append(Bet(home_team=match.home_team.name, away_team=match.away_team.name, prediction=Result.T,
                             expected_value=match.expected_value.tie, bet_fraction=match.bet_fraction.tie))
         if match.expected_value.away_win > 0:
-            bets.append(Bet(home_team=match.home_team.name, away_team=match.away_team.name, result=Result.A,
+            bets.append(Bet(home_team=match.home_team.name, away_team=match.away_team.name, prediction=Result.A,
                             expected_value=match.expected_value.away_win, bet_fraction=match.bet_fraction.away_win))
 
     bets.sort(key=lambda b: b.expected_value, reverse=True)
@@ -47,14 +47,11 @@ if __name__ == '__main__':
 
     table.field_names = ["Home team", "Away team", "Result", "Expected Value", "Bet Fraction", "Balance", "Bet Amount"]
 
-    print(f"Balance: {balance}")
-
     for bet in bets:
         bet_amount = int(bet.bet_fraction * balance)
         table.add_row(
-            [bet.home_team, bet.away_team, bet.result.value, bet.expected_value, bet.bet_fraction, balance, bet_amount])
+            [bet.home_team, bet.away_team, bet.prediction.value, bet.expected_value, bet.bet_fraction, balance,
+             bet_amount])
         balance -= bet_amount
 
     print(table)
-
-    print(f"Balance: {balance}")

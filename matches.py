@@ -1,6 +1,7 @@
 import argparse
 import json
 import time
+from datetime import datetime
 
 from playwright.sync_api import sync_playwright
 from pydantic.json import pydantic_encoder
@@ -59,13 +60,16 @@ if __name__ == '__main__':
             if match.expected_value is not None:
                 kelly_criterion.compute(match)
 
-        match_time = "UNKNOWN"
+        match_time = datetime.now().isocalendar()
 
         for match in matches:
-            if match.match_time is not None:
-                match_time = match.match_time.strftime('%Y%m%d')
+            if match.match_time is datetime:
+                match_time = match.match_time.isocalendar()
 
-        filename = f"data/matches_{match_time}.json"
+        year = match_time.year
+        week = match_time.week
+
+        filename = f"data/matches_{week}_{year}_{coupon.name}.json"
 
         with open(filename, "w") as f:
             json.dump(matches, f, default=pydantic_encoder)
