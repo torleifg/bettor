@@ -13,7 +13,7 @@ import probability
 from common import Coupon, Match, Bet, Result
 
 
-def run(coupon: Coupon, day: int):
+def create_matches(coupon: Coupon, day: int):
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
@@ -59,7 +59,7 @@ def run(coupon: Coupon, day: int):
         browser.close()
 
 
-def bet_amounts(filename: str, balance: int):
+def create_bets(filename: str, balance: int):
     with open(filename, "r") as f:
         data = json.load(f)
 
@@ -103,5 +103,25 @@ def bet_amounts(filename: str, balance: int):
 
 
 if __name__ == '__main__':
-    bet_amounts("matches_20250831.json", 500)
-    # run(Coupon.SUNDAY, 500)
+    print("Enter command:")
+    command = input()
+
+    if command == "matches":
+        print("Enter coupon")
+        coupon = Coupon[input().upper()]
+
+        print("Enter day:")
+        day = int(input())
+
+        create_matches(coupon, day)
+    elif command == "bets":
+        print("Enter filename")
+        filename = input()
+
+        print("Enter balance:")
+        balance = int(input())
+
+        create_bets(filename, balance)
+    else:
+        print(f"Unknown command: {command}")
+        exit()
