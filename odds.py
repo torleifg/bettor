@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Set
 
 from playwright.sync_api import Page, TimeoutError
 
@@ -7,7 +8,7 @@ from common import Match, Odds
 date_time_format = "Dato: %d %b. %Y %H:%M."
 
 
-def scrape(page: Page, match: Match, day: int):
+def scrape(page: Page, match: Match, days: Set[int]):
     iframe_locator = page.locator("#sportsbookid")
     iframe_locator.wait_for()
 
@@ -49,12 +50,12 @@ def scrape(page: Page, match: Match, day: int):
 
         date_time_object = datetime.strptime(date_time_string, date_time_format)
 
-        if date_time_object.day == day:
+        if date_time_object.day in days:
             match.match_time = date_time_object
             target_locator = iframe.locator(f'div[role="listitem"]:has-text("{teams}")')
 
     if not target_locator:
-        print(f"No match found with on day {day}.")
+        print(f"No match found on days {days}.")
         search_input_locator.clear()
         return None
 
