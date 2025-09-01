@@ -2,9 +2,6 @@ from common import Match, ExpectedValue
 
 
 def compute(match: Match):
-    if match.odds is None:
-        return None
-
     home_win = formula(match.odds.home_win, match.probability.home_win)
     tie = formula(match.odds.tie, match.probability.tie)
     away_win = formula(match.odds.away_win, match.probability.away_win)
@@ -14,8 +11,6 @@ def compute(match: Match):
         tie=tie,
         away_win=away_win
     )
-
-    return None
 
 
 def formula(odds: float, probability: int) -> float:

@@ -11,6 +11,10 @@ class Coupon(Enum):
     SATURDAY = 1
     SUNDAY = 2
 
+class Result(Enum):
+    H = "Home"
+    T = "Tie"
+    A = "Away"
 
 class Team(BaseModel):
     name: Annotated[str, Field(min_length=1)]
@@ -61,3 +65,11 @@ class Match(BaseModel):
 
     def teams_string(self) -> str:
         return f"{self.home_team.name} - {self.away_team.name}"
+
+
+class Bet(BaseModel):
+    home_team: str
+    away_team: str
+    result: Result
+    expected_value: float
+    bet_fraction: float

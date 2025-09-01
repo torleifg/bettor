@@ -1,0 +1,310 @@
+[
+  {
+    "home_team": {
+      "name": "\u00c5sane"
+    },
+    "away_team": {
+      "name": "Sogndal"
+    },
+    "match_time": "2025-08-30T16:00:00",
+    "scrape_time": "2025-08-29T13:46:33.504886",
+    "probability": {
+      "home_win": 23,
+      "tie": 25,
+      "away_win": 52
+    },
+    "odds": {
+      "home_win": 2.7,
+      "tie": 3.6,
+      "away_win": 2.25
+    },
+    "expected_value": {
+      "home_win": -0.379,
+      "tie": -0.1,
+      "away_win": 0.17
+    },
+    "bet_fraction": {
+      "home_win": -0.223,
+      "tie": -0.038,
+      "away_win": 0.136
+    }
+  },
+  {
+    "home_team": {
+      "name": "Moss"
+    },
+    "away_team": {
+      "name": "Mj\u00f8ndalen"
+    },
+    "match_time": "2025-08-30T16:00:00",
+    "scrape_time": "2025-08-29T13:46:33.504886",
+    "probability": {
+      "home_win": 67,
+      "tie": 18,
+      "away_win": 15
+    },
+    "odds": {
+      "home_win": 1.72,
+      "tie": 3.85,
+      "away_win": 4.0
+    },
+    "expected_value": {
+      "home_win": 0.152,
+      "tie": -0.307,
+      "away_win": -0.4
+    },
+    "bet_fraction": {
+      "home_win": 0.211,
+      "tie": -0.108,
+      "away_win": -0.133
+    }
+  },
+  {
+    "home_team": {
+      "name": "V\u00e5lerenga"
+    },
+    "away_team": {
+      "name": "Bryne"
+    },
+    "match_time": "2025-08-30T18:00:00",
+    "scrape_time": "2025-08-29T13:46:33.504886",
+    "probability": {
+      "home_win": 67,
+      "tie": 18,
+      "away_win": 15
+    },
+    "odds": {
+      "home_win": 1.65,
+      "tie": 4.1,
+      "away_win": 4.5
+    },
+    "expected_value": {
+      "home_win": 0.105,
+      "tie": -0.262,
+      "away_win": -0.325
+    },
+    "bet_fraction": {
+      "home_win": 0.162,
+      "tie": -0.085,
+      "away_win": -0.093
+    }
+  },
+  {
+    "home_team": {
+      "name": "H\u00f8dd"
+    },
+    "away_team": {
+      "name": "Raufoss"
+    },
+    "match_time": "2025-08-30T16:00:00",
+    "scrape_time": "2025-08-29T13:46:33.504886",
+    "probability": {
+      "home_win": 52,
+      "tie": 25,
+      "away_win": 23
+    },
+    "odds": {
+      "home_win": 2.0,
+      "tie": 3.55,
+      "away_win": 3.25
+    },
+    "expected_value": {
+      "home_win": 0.04,
+      "tie": -0.113,
+      "away_win": -0.252
+    },
+    "bet_fraction": null
+  },
+  {
+    "home_team": {
+      "name": "Watford"
+    },
+    "away_team": {
+      "name": "Southampton"
+    },
+    "match_time": "2025-08-30T16:00:00",
+    "scrape_time": "2025-08-29T13:46:33.504886",
+    "probability": {
+      "home_win": 37,
+      "tie": 30,
+      "away_win": 33
+    },
+    "odds": {
+      "home_win": 2.8,
+      "tie": 3.25,
+      "away_win": 2.45
+    },
+    "expected_value": {
+      "home_win": 0.036,
+      "tie": -0.025,
+      "away_win": -0.191
+    },
+    "bet_fraction": null
+  },
+  {
+    "home_team": {
+      "name": "Tottenham"
+    },
+    "away_team": {
+      "name": "Bournemouth"
+    },
+    "match_time": "2025-08-30T16:00:00",
+    "scrape_time": "2025-08-29T13:46:33.504886",
+    "probability": {
+      "home_win": 52,
+      "tie": 25,
+      "away_win": 23
+    },
+    "odds": {
+      "home_win": 1.72,
+      "tie": 4.0,
+      "away_win": 4.2
+    },
+    "expected_value": {
+      "home_win": -0.106,
+      "tie": 0.0,
+      "away_win": -0.034
+    },
+    "bet_fraction": null
+  },
+  {
+    "home_team": {
+      "name": "Lillestr\u00f8m"
+    },
+    "away_team": {
+      "name": "Skeid"
+    },
+    "match_time": "2025-08-30T16:00:00",
+    "scrape_time": "2025-08-29T13:46:33.504886",
+    "probability": {
+      "home_win": 80,
+      "tie": 12,
+      "away_win": 8
+    },
+    "odds": {
+      "home_win": 1.14,
+      "tie": 7.5,
+      "away_win": 12.5
+    },
+    "expected_value": {
+      "home_win": -0.088,
+      "tie": -0.1,
+      "away_win": 0.0
+    },
+    "bet_fraction": null
+  },
+  {
+    "home_team": {
+      "name": "Leeds"
+    },
+    "away_team": {
+      "name": "Newcastle"
+    },
+    "match_time": "2025-08-30T18:30:00",
+    "scrape_time": "2025-08-29T13:46:33.504886",
+    "probability": {
+      "home_win": 26,
+      "tie": 27,
+      "away_win": 47
+    },
+    "odds": {
+      "home_win": 3.3,
+      "tie": 3.45,
+      "away_win": 2.1
+    },
+    "expected_value": {
+      "home_win": -0.142,
+      "tie": -0.068,
+      "away_win": -0.013
+    },
+    "bet_fraction": null
+  },
+  {
+    "home_team": {
+      "name": "Kongsvinger"
+    },
+    "away_team": {
+      "name": "Ranheim"
+    },
+    "match_time": "2025-08-30T16:00:00",
+    "scrape_time": "2025-08-29T13:46:33.504886",
+    "probability": {
+      "home_win": 61,
+      "tie": 21,
+      "away_win": 18
+    },
+    "odds": {
+      "home_win": 1.58,
+      "tie": 4.3,
+      "away_win": 4.5
+    },
+    "expected_value": {
+      "home_win": -0.036,
+      "tie": -0.097,
+      "away_win": -0.19
+    },
+    "bet_fraction": null
+  },
+  {
+    "home_team": {
+      "name": "Wolverhampton"
+    },
+    "away_team": {
+      "name": "Everton"
+    },
+    "match_time": "2025-08-30T16:00:00",
+    "scrape_time": "2025-08-29T13:46:33.504886",
+    "probability": {
+      "home_win": 35,
+      "tie": 30,
+      "away_win": 35
+    },
+    "odds": {
+      "home_win": 2.6,
+      "tie": 3.2,
+      "away_win": 2.7
+    },
+    "expected_value": {
+      "home_win": -0.09,
+      "tie": -0.04,
+      "away_win": -0.055
+    },
+    "bet_fraction": null
+  },
+  {
+    "home_team": {
+      "name": "Manchester Utd"
+    },
+    "away_team": {
+      "name": "Burnley"
+    },
+    "match_time": null,
+    "scrape_time": "2025-08-29T13:46:33.504886",
+    "probability": {
+      "home_win": 71,
+      "tie": 16,
+      "away_win": 13
+    },
+    "odds": null,
+    "expected_value": null,
+    "bet_fraction": null
+  },
+  {
+    "home_team": {
+      "name": "Sunderland"
+    },
+    "away_team": {
+      "name": "Brentford"
+    },
+    "match_time": null,
+    "scrape_time": "2025-08-29T13:46:33.504886",
+    "probability": {
+      "home_win": 35,
+      "tie": 30,
+      "away_win": 35
+    },
+    "odds": null,
+    "expected_value": null,
+    "bet_fraction": null
+  }
+]

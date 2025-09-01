@@ -1,0 +1,362 @@
+[
+  {
+    "home_team": {
+      "name": "Fredrikstad"
+    },
+    "away_team": {
+      "name": "Haugesund"
+    },
+    "match_time": "2025-08-31T17:00:00",
+    "scrape_time": "2025-08-30T19:47:43.099917",
+    "probability": {
+      "home_win": 65,
+      "tie": 19,
+      "away_win": 16
+    },
+    "odds": {
+      "home_win": 1.27,
+      "tie": 5.8,
+      "away_win": 9.2
+    },
+    "expected_value": {
+      "home_win": -0.174,
+      "tie": 0.102,
+      "away_win": 0.472
+    },
+    "bet_fraction": {
+      "home_win": -0.644,
+      "tie": 0.021,
+      "away_win": 0.058
+    }
+  },
+  {
+    "home_team": {
+      "name": "Viking"
+    },
+    "away_team": {
+      "name": "Rosenborg"
+    },
+    "match_time": "2025-08-31T17:00:00",
+    "scrape_time": "2025-08-30T19:47:43.099917",
+    "probability": {
+      "home_win": 40,
+      "tie": 30,
+      "away_win": 30
+    },
+    "odds": {
+      "home_win": 1.72,
+      "tie": 4.0,
+      "away_win": 4.2
+    },
+    "expected_value": {
+      "home_win": -0.312,
+      "tie": 0.2,
+      "away_win": 0.26
+    },
+    "bet_fraction": {
+      "home_win": -0.433,
+      "tie": 0.067,
+      "away_win": 0.081
+    }
+  },
+  {
+    "home_team": {
+      "name": "Nottingham F"
+    },
+    "away_team": {
+      "name": "West Ham"
+    },
+    "match_time": "2025-08-31T15:00:00",
+    "scrape_time": "2025-08-30T19:47:43.099917",
+    "probability": {
+      "home_win": 51,
+      "tie": 25,
+      "away_win": 24
+    },
+    "odds": {
+      "home_win": 1.67,
+      "tie": 3.85,
+      "away_win": 4.8
+    },
+    "expected_value": {
+      "home_win": -0.148,
+      "tie": -0.037,
+      "away_win": 0.152
+    },
+    "bet_fraction": {
+      "home_win": -0.221,
+      "tie": -0.013,
+      "away_win": 0.04
+    }
+  },
+  {
+    "home_team": {
+      "name": "Troms\u00f8"
+    },
+    "away_team": {
+      "name": "KFUM Oslo"
+    },
+    "match_time": "2025-08-31T17:00:00",
+    "scrape_time": "2025-08-30T19:47:43.099917",
+    "probability": {
+      "home_win": 59,
+      "tie": 22,
+      "away_win": 19
+    },
+    "odds": {
+      "home_win": 1.95,
+      "tie": 3.45,
+      "away_win": 3.75
+    },
+    "expected_value": {
+      "home_win": 0.15,
+      "tie": -0.241,
+      "away_win": -0.287
+    },
+    "bet_fraction": {
+      "home_win": 0.158,
+      "tie": -0.098,
+      "away_win": -0.104
+    }
+  },
+  {
+    "home_team": {
+      "name": "Liverpool"
+    },
+    "away_team": {
+      "name": "Arsenal"
+    },
+    "match_time": "2025-08-31T17:30:00",
+    "scrape_time": "2025-08-30T19:47:43.099917",
+    "probability": {
+      "home_win": 50,
+      "tie": 26,
+      "away_win": 24
+    },
+    "odds": {
+      "home_win": 2.3,
+      "tie": 3.4,
+      "away_win": 2.95
+    },
+    "expected_value": {
+      "home_win": 0.15,
+      "tie": -0.116,
+      "away_win": -0.292
+    },
+    "bet_fraction": {
+      "home_win": 0.115,
+      "tie": -0.048,
+      "away_win": -0.15
+    }
+  },
+  {
+    "home_team": {
+      "name": "HamKam"
+    },
+    "away_team": {
+      "name": "Sarpsborg 08"
+    },
+    "match_time": "2025-08-31T17:00:00",
+    "scrape_time": "2025-08-30T19:47:43.099917",
+    "probability": {
+      "home_win": 35,
+      "tie": 30,
+      "away_win": 35
+    },
+    "odds": {
+      "home_win": 2.55,
+      "tie": 3.75,
+      "away_win": 2.45
+    },
+    "expected_value": {
+      "home_win": -0.108,
+      "tie": 0.125,
+      "away_win": -0.142
+    },
+    "bet_fraction": {
+      "home_win": -0.07,
+      "tie": 0.045,
+      "away_win": -0.098
+    }
+  },
+  {
+    "home_team": {
+      "name": "Brighton"
+    },
+    "away_team": {
+      "name": "Manchester City"
+    },
+    "match_time": "2025-08-31T15:00:00",
+    "scrape_time": "2025-08-30T19:47:43.099917",
+    "probability": {
+      "home_win": 19,
+      "tie": 22,
+      "away_win": 59
+    },
+    "odds": {
+      "home_win": 3.65,
+      "tie": 3.75,
+      "away_win": 1.9
+    },
+    "expected_value": {
+      "home_win": -0.306,
+      "tie": -0.175,
+      "away_win": 0.121
+    },
+    "bet_fraction": {
+      "home_win": -0.115,
+      "tie": -0.064,
+      "away_win": 0.134
+    }
+  },
+  {
+    "home_team": {
+      "name": "Sandefjord"
+    },
+    "away_team": {
+      "name": "Bod\u00f8/Glimt"
+    },
+    "match_time": "2025-08-31T17:00:00",
+    "scrape_time": "2025-08-30T19:47:43.099917",
+    "probability": {
+      "home_win": 19,
+      "tie": 22,
+      "away_win": 59
+    },
+    "odds": {
+      "home_win": 5.3,
+      "tie": 4.7,
+      "away_win": 1.5
+    },
+    "expected_value": {
+      "home_win": 0.007,
+      "tie": 0.034,
+      "away_win": -0.115
+    },
+    "bet_fraction": {
+      "home_win": 0.002,
+      "tie": 0.009,
+      "away_win": -0.23
+    }
+  },
+  {
+    "home_team": {
+      "name": "Aston Villa"
+    },
+    "away_team": {
+      "name": "Crystal Palace"
+    },
+    "match_time": "2025-08-31T20:00:00",
+    "scrape_time": "2025-08-30T19:47:43.099917",
+    "probability": {
+      "home_win": 50,
+      "tie": 26,
+      "away_win": 24
+    },
+    "odds": {
+      "home_win": 1.82,
+      "tie": 3.55,
+      "away_win": 4.2
+    },
+    "expected_value": {
+      "home_win": -0.09,
+      "tie": -0.077,
+      "away_win": 0.008
+    },
+    "bet_fraction": {
+      "home_win": -0.11,
+      "tie": -0.03,
+      "away_win": 0.003
+    }
+  },
+  {
+    "home_team": {
+      "name": "Aalesund"
+    },
+    "away_team": {
+      "name": "Egersund"
+    },
+    "match_time": "2025-08-31T17:00:00",
+    "scrape_time": "2025-08-30T19:47:43.099917",
+    "probability": {
+      "home_win": 61,
+      "tie": 21,
+      "away_win": 18
+    },
+    "odds": {
+      "home_win": 1.5,
+      "tie": 4.3,
+      "away_win": 5.3
+    },
+    "expected_value": {
+      "home_win": -0.085,
+      "tie": -0.097,
+      "away_win": -0.046
+    },
+    "bet_fraction": {
+      "home_win": -0.17,
+      "tie": -0.029,
+      "away_win": -0.011
+    }
+  },
+  {
+    "home_team": {
+      "name": "Str\u00f8msgodset"
+    },
+    "away_team": {
+      "name": "Molde"
+    },
+    "match_time": "2025-08-31T19:15:00",
+    "scrape_time": "2025-08-30T19:47:43.099917",
+    "probability": {
+      "home_win": 22,
+      "tie": 24,
+      "away_win": 54
+    },
+    "odds": {
+      "home_win": 4.1,
+      "tie": 3.95,
+      "away_win": 1.75
+    },
+    "expected_value": {
+      "home_win": -0.098,
+      "tie": -0.052,
+      "away_win": -0.055
+    },
+    "bet_fraction": {
+      "home_win": -0.032,
+      "tie": -0.018,
+      "away_win": -0.073
+    }
+  },
+  {
+    "home_team": {
+      "name": "Kristiansund"
+    },
+    "away_team": {
+      "name": "Brann"
+    },
+    "match_time": "2025-08-31T14:30:00",
+    "scrape_time": "2025-08-30T19:47:43.099917",
+    "probability": {
+      "home_win": 19,
+      "tie": 22,
+      "away_win": 59
+    },
+    "odds": {
+      "home_win": 4.8,
+      "tie": 4.2,
+      "away_win": 1.6
+    },
+    "expected_value": {
+      "home_win": -0.088,
+      "tie": -0.076,
+      "away_win": -0.056
+    },
+    "bet_fraction": {
+      "home_win": -0.023,
+      "tie": -0.024,
+      "away_win": -0.093
+    }
+  }
+]
