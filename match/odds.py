@@ -1,4 +1,5 @@
 from datetime import datetime
+from difflib import SequenceMatcher
 from typing import Set
 
 from playwright.sync_api import Page, TimeoutError
@@ -46,13 +47,18 @@ def scrape(page: Page, match: Match, days: Set[int]):
         info = info_locator.all()
 
         teams = info[1].inner_text()
-        date_time_string = info[2].inner_text()
+        home_team, away_team = teams.rstrip(".").strip().split(" mot ")
 
+        home_team_matcher = SequenceMatcher(None, match.home_team.name, home_team)
+        away_team_matcher = SequenceMatcher(None, match.away_team.name, away_team)
+
+        date_time_string = info[2].inner_text()
         date_time_object = datetime.strptime(date_time_string, date_time_format)
 
-        if date_time_object.day in days:
+        if home_team_matcher.ratio() > 0.5 and away_team_matcher.ratio() > 0.5 and date_time_object.day in days:
             match.match_time = date_time_object
             target_locator = iframe.locator(f'div[role="listitem"]:has-text("{teams}")')
+            break
 
     if not target_locator:
         print(f"No match found on days {days}.")
