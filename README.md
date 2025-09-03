@@ -50,3 +50,17 @@ Install requirements:
 ```bash
 pip install -r requirements.txt
 ```
+
+## Usage
+
+```python
+python main.py matches --coupon MIDWEEK --days 4 5
+```
+
+```python
+python main.py predictions --filename data/matches_36_2025_MIDWEEK.json
+```
+
+```python
+python main.py bets --filename data/matches_36_2025_MIDWEEK.json --balance 500
+```

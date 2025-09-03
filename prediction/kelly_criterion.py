@@ -1,4 +1,4 @@
-from common import Match, BetFraction
+from common.domain import Match, BetFraction
 
 
 def compute(match: Match):

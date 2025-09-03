@@ -1,4 +1,4 @@
-from common import Match, ExpectedValue
+from common.domain import Match, ExpectedValue
 
 
 def compute(match: Match):

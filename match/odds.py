@@ -3,7 +3,7 @@ from typing import Set
 
 from playwright.sync_api import Page, TimeoutError
 
-from common import Match, Odds
+from common.domain import Match, Odds
 
 date_time_format = "Dato: %d %b. %Y %H:%M."
 

@@ -1,4 +1,3 @@
-import argparse
 import json
 import time
 from datetime import datetime
@@ -6,20 +5,11 @@ from datetime import datetime
 from playwright.sync_api import sync_playwright
 from pydantic.json import pydantic_encoder
 
-import expected_value
-import kelly_criterion
-import odds
-import probability
-from common import Coupon
+from common.domain import Coupon
+from match import probability, odds
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(prog='bets')
 
-    parser.add_argument('--coupon', required=True, type=str)
-    parser.add_argument('--days', nargs="+", required=True, type=int)
-
-    args = parser.parse_args()
-
+def run(args):
     coupon = Coupon[args.coupon]
     days = set(args.days)
 
@@ -53,12 +43,6 @@ if __name__ == '__main__':
             odds.scrape(page, match, days)
 
             time.sleep(1)
-
-            if match.odds is not None:
-                expected_value.compute(match)
-
-            if match.expected_value is not None:
-                kelly_criterion.compute(match)
 
         match_time = datetime.now().isocalendar()
 

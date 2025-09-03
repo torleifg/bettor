@@ -1,20 +1,13 @@
-import argparse
 import json
 
 from prettytable import PrettyTable
 from pydantic import TypeAdapter
 from pydantic.json import pydantic_encoder
 
-from common import Match, Bet, Result
+from common.domain import Match, Bet, Result
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(prog='bets')
 
-    parser.add_argument('--filename', required=True, type=str)
-    parser.add_argument('--balance', required=True, type=int)
-
-    args = parser.parse_args()
-
+def run(args):
     filename = args.filename
     balance = args.balance
 

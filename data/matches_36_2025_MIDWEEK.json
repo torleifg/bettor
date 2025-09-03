@@ -6,16 +6,28 @@
     "away_team": {
       "name": "Finland"
     },
-    "match_time": null,
-    "scrape_time": "2025-09-01T22:54:11.099658",
+    "match_time": "2025-09-04T18:00:00",
+    "scrape_time": "2025-09-03T16:52:10.102288",
     "probability": {
       "home_win": 67,
       "tie": 18,
       "away_win": 15
     },
-    "odds": null,
-    "expected_value": null,
-    "bet_fraction": null,
+    "odds": {
+      "home_win": 1.33,
+      "tie": 4.9,
+      "away_win": 9.0
+    },
+    "expected_value": {
+      "home_win": -0.109,
+      "tie": -0.118,
+      "away_win": 0.35
+    },
+    "bet_fraction": {
+      "home_win": -0.33,
+      "tie": -0.03,
+      "away_win": 0.044
+    },
     "result": null
   },
   {
@@ -26,7 +38,7 @@
       "name": "Tyrkia"
     },
     "match_time": "2025-09-04T18:00:00",
-    "scrape_time": "2025-09-01T22:54:11.099658",
+    "scrape_time": "2025-09-03T16:52:10.102288",
     "probability": {
       "home_win": 26,
       "tie": 26,
@@ -34,18 +46,18 @@
     },
     "odds": {
       "home_win": 2.85,
-      "tie": 3.45,
-      "away_win": 2.35
+      "tie": 3.55,
+      "away_win": 2.3
     },
     "expected_value": {
       "home_win": -0.259,
-      "tie": -0.103,
-      "away_win": 0.128
+      "tie": -0.077,
+      "away_win": 0.104
     },
     "bet_fraction": {
       "home_win": -0.14,
-      "tie": -0.042,
-      "away_win": 0.095
+      "tie": -0.03,
+      "away_win": 0.08
     },
     "result": null
   },
@@ -57,26 +69,26 @@
       "name": "Tyskland"
     },
     "match_time": "2025-09-04T20:45:00",
-    "scrape_time": "2025-09-01T22:54:11.099658",
+    "scrape_time": "2025-09-03T16:52:10.102288",
     "probability": {
       "home_win": 13,
       "tie": 16,
       "away_win": 71
     },
     "odds": {
-      "home_win": 6.6,
+      "home_win": 7.2,
       "tie": 4.4,
-      "away_win": 1.45
+      "away_win": 1.42
     },
     "expected_value": {
-      "home_win": -0.142,
+      "home_win": -0.064,
       "tie": -0.296,
-      "away_win": 0.029
+      "away_win": 0.008
     },
     "bet_fraction": {
-      "home_win": -0.025,
+      "home_win": -0.01,
       "tie": -0.087,
-      "away_win": 0.064
+      "away_win": 0.019
     },
     "result": null
   },
@@ -88,26 +100,26 @@
       "name": "Nord-Irland"
     },
     "match_time": "2025-09-04T20:45:00",
-    "scrape_time": "2025-09-01T22:54:11.099658",
+    "scrape_time": "2025-09-03T16:52:10.102288",
     "probability": {
       "home_win": 26,
       "tie": 27,
       "away_win": 47
     },
     "odds": {
-      "home_win": 3.55,
-      "tie": 2.75,
-      "away_win": 2.2
+      "home_win": 3.75,
+      "tie": 2.7,
+      "away_win": 2.15
     },
     "expected_value": {
-      "home_win": -0.077,
-      "tie": -0.257,
-      "away_win": 0.034
+      "home_win": -0.025,
+      "tie": -0.271,
+      "away_win": 0.01
     },
     "bet_fraction": {
-      "home_win": -0.03,
-      "tie": -0.147,
-      "away_win": 0.028
+      "home_win": -0.009,
+      "tie": -0.159,
+      "away_win": 0.009
     },
     "result": null
   },
@@ -119,24 +131,24 @@
       "name": "Spania"
     },
     "match_time": "2025-09-04T20:45:00",
-    "scrape_time": "2025-09-01T22:54:11.099658",
+    "scrape_time": "2025-09-03T16:52:10.102288",
     "probability": {
       "home_win": 4,
       "tie": 5,
       "away_win": 91
     },
     "odds": {
-      "home_win": 24.0,
+      "home_win": 23.0,
       "tie": 9.2,
       "away_win": 1.09
     },
     "expected_value": {
-      "home_win": -0.04,
+      "home_win": -0.08,
       "tie": -0.54,
       "away_win": -0.008
     },
     "bet_fraction": {
-      "home_win": -0.002,
+      "home_win": -0.004,
       "tie": -0.066,
       "away_win": -0.089
     },
@@ -150,7 +162,7 @@
       "name": "Polen"
     },
     "match_time": "2025-09-04T20:45:00",
-    "scrape_time": "2025-09-01T22:54:11.099658",
+    "scrape_time": "2025-09-03T16:52:10.102288",
     "probability": {
       "home_win": 80,
       "tie": 12,
@@ -181,26 +193,26 @@
       "name": "Sverige"
     },
     "match_time": "2025-09-05T20:45:00",
-    "scrape_time": "2025-09-01T22:54:11.099658",
+    "scrape_time": "2025-09-03T16:52:10.102288",
     "probability": {
       "home_win": 29,
       "tie": 29,
       "away_win": 42
     },
     "odds": {
-      "home_win": 3.3,
-      "tie": 3.1,
-      "away_win": 2.25
+      "home_win": 3.35,
+      "tie": 3.15,
+      "away_win": 2.2
     },
     "expected_value": {
-      "home_win": -0.043,
-      "tie": -0.101,
-      "away_win": -0.055
+      "home_win": -0.029,
+      "tie": -0.087,
+      "away_win": -0.076
     },
     "bet_fraction": {
-      "home_win": -0.019,
-      "tie": -0.048,
-      "away_win": -0.044
+      "home_win": -0.012,
+      "tie": -0.04,
+      "away_win": -0.063
     },
     "result": null
   },
@@ -212,26 +224,26 @@
       "name": "Kosovo"
     },
     "match_time": "2025-09-05T20:45:00",
-    "scrape_time": "2025-09-01T22:54:11.099658",
+    "scrape_time": "2025-09-03T16:52:10.102288",
     "probability": {
       "home_win": 77,
       "tie": 14,
       "away_win": 9
     },
     "odds": {
-      "home_win": 1.35,
-      "tie": 5.0,
-      "away_win": 7.8
+      "home_win": 1.38,
+      "tie": 4.8,
+      "away_win": 7.35
     },
     "expected_value": {
-      "home_win": 0.04,
-      "tie": -0.3,
-      "away_win": -0.298
+      "home_win": 0.063,
+      "tie": -0.328,
+      "away_win": -0.339
     },
     "bet_fraction": {
-      "home_win": 0.114,
-      "tie": -0.075,
-      "away_win": -0.044
+      "home_win": 0.166,
+      "tie": -0.086,
+      "away_win": -0.053
     },
     "result": null
   },
@@ -243,7 +255,7 @@
       "name": "Skottland"
     },
     "match_time": "2025-09-05T20:45:00",
-    "scrape_time": "2025-09-01T22:54:11.099658",
+    "scrape_time": "2025-09-03T16:52:10.102288",
     "probability": {
       "home_win": 65,
       "tie": 19,
@@ -251,18 +263,18 @@
     },
     "odds": {
       "home_win": 1.58,
-      "tie": 3.85,
-      "away_win": 5.7
+      "tie": 3.8,
+      "away_win": 5.9
     },
     "expected_value": {
       "home_win": 0.027,
-      "tie": -0.268,
-      "away_win": -0.088
+      "tie": -0.278,
+      "away_win": -0.056
     },
     "bet_fraction": {
       "home_win": 0.047,
-      "tie": -0.094,
-      "away_win": -0.019
+      "tie": -0.099,
+      "away_win": -0.011
     },
     "result": null
   },
@@ -274,26 +286,26 @@
       "name": "Frankrike"
     },
     "match_time": "2025-09-05T20:45:00",
-    "scrape_time": "2025-09-01T22:54:11.099658",
+    "scrape_time": "2025-09-03T16:52:10.102288",
     "probability": {
       "home_win": 13,
       "tie": 16,
       "away_win": 71
     },
     "odds": {
-      "home_win": 7.8,
+      "home_win": 8.2,
       "tie": 4.6,
-      "away_win": 1.38
+      "away_win": 1.37
     },
     "expected_value": {
-      "home_win": 0.014,
+      "home_win": 0.066,
       "tie": -0.264,
-      "away_win": -0.02
+      "away_win": -0.027
     },
     "bet_fraction": {
-      "home_win": 0.002,
+      "home_win": 0.009,
       "tie": -0.073,
-      "away_win": -0.053
+      "away_win": -0.073
     },
     "result": null
   },
@@ -305,7 +317,7 @@
       "name": "Aserbajdsjan"
     },
     "match_time": "2025-09-05T20:45:00",
-    "scrape_time": "2025-09-01T22:54:11.099658",
+    "scrape_time": "2025-09-03T16:52:10.102288",
     "probability": {
       "home_win": 69,
       "tie": 17,
@@ -313,11 +325,11 @@
     },
     "odds": {
       "home_win": 1.48,
-      "tie": 4.2,
-      "away_win": 6.5
+      "tie": 4.20,
+      "away_win": 6.50
     },
     "expected_value": {
-      "home_win": 0.021,
+      "home_win": 0.0212,
       "tie": -0.286,
       "away_win": -0.09
     },
@@ -336,7 +348,7 @@
       "name": "Tsjekkia"
     },
     "match_time": "2025-09-05T20:45:00",
-    "scrape_time": "2025-09-01T22:54:11.099658",
+    "scrape_time": "2025-09-03T16:52:10.102288",
     "probability": {
       "home_win": 17,
       "tie": 20,

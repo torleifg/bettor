@@ -2,7 +2,7 @@ from typing import List
 
 from playwright.sync_api import Page
 
-from common import Match, Probability, Team
+from common.domain import Match, Probability, Team
 
 
 def scrape(page: Page) -> List[Match]:
