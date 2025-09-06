@@ -1,0 +1,374 @@
+[
+  {
+    "home_team": {
+      "name": "Irland"
+    },
+    "away_team": {
+      "name": "Ungarn"
+    },
+    "match_time": "2025-09-06T20:45:00",
+    "scrape_time": "2025-09-06T12:21:04.689108",
+    "probability": {
+      "home_win": 44,
+      "tie": 28,
+      "away_win": 28
+    },
+    "odds": {
+      "home_win": 2.5,
+      "tie": 3.0,
+      "away_win": 2.95
+    },
+    "expected_value": {
+      "home_win": 0.1,
+      "tie": -0.16,
+      "away_win": -0.174
+    },
+    "bet_fraction": {
+      "home_win": 0.067,
+      "tie": -0.08,
+      "away_win": -0.089
+    },
+    "result": null
+  },
+  {
+    "home_team": {
+      "name": "Grorud"
+    },
+    "away_team": {
+      "name": "Levanger"
+    },
+    "match_time": "2025-09-06T16:00:00",
+    "scrape_time": "2025-09-06T12:21:04.689108",
+    "probability": {
+      "home_win": 57,
+      "tie": 23,
+      "away_win": 20
+    },
+    "odds": {
+      "home_win": 1.75,
+      "tie": 3.8,
+      "away_win": 3.5
+    },
+    "expected_value": {
+      "home_win": -0.003,
+      "tie": -0.126,
+      "away_win": -0.3
+    },
+    "bet_fraction": {
+      "home_win": -0.004,
+      "tie": -0.045,
+      "away_win": -0.12
+    },
+    "result": null
+  },
+  {
+    "home_team": {
+      "name": "Torvastad"
+    },
+    "away_team": {
+      "name": "Vindbjart"
+    },
+    "match_time": "2025-09-06T16:00:00",
+    "scrape_time": "2025-09-06T12:21:04.689108",
+    "probability": {
+      "home_win": 14,
+      "tie": 17,
+      "away_win": 69
+    },
+    "odds": {
+      "home_win": 5.9,
+      "tie": 5.5,
+      "away_win": 1.3
+    },
+    "expected_value": {
+      "home_win": -0.174,
+      "tie": -0.065,
+      "away_win": -0.103
+    },
+    "bet_fraction": {
+      "home_win": -0.036,
+      "tie": -0.014,
+      "away_win": -0.343
+    },
+    "result": null
+  },
+  {
+    "home_team": {
+      "name": "Milton Keynes Dons"
+    },
+    "away_team": {
+      "name": "Grimsby Town"
+    },
+    "match_time": "2025-09-06T16:00:00",
+    "scrape_time": "2025-09-06T12:21:04.689108",
+    "probability": {
+      "home_win": 50,
+      "tie": 26,
+      "away_win": 24
+    },
+    "odds": {
+      "home_win": 2.0,
+      "tie": 3.45,
+      "away_win": 3.3
+    },
+    "expected_value": {
+      "home_win": 0.0,
+      "tie": -0.103,
+      "away_win": -0.208
+    },
+    "bet_fraction": {
+      "home_win": 0.0,
+      "tie": -0.042,
+      "away_win": -0.09
+    },
+    "result": null
+  },
+  {
+    "home_team": {
+      "name": "Salford City"
+    },
+    "away_team": {
+      "name": "Tranmere Rovers"
+    },
+    "match_time": "2025-09-06T16:00:00",
+    "scrape_time": "2025-09-06T12:21:04.689108",
+    "probability": {
+      "home_win": 45,
+      "tie": 28,
+      "away_win": 27
+    },
+    "odds": {
+      "home_win": 2.15,
+      "tie": 3.3,
+      "away_win": 3.1
+    },
+    "expected_value": {
+      "home_win": -0.032,
+      "tie": -0.076,
+      "away_win": -0.163
+    },
+    "bet_fraction": {
+      "home_win": -0.028,
+      "tie": -0.033,
+      "away_win": -0.078
+    },
+    "result": null
+  },
+  {
+    "home_team": {
+      "name": "Notts County"
+    },
+    "away_team": {
+      "name": "Fleetwood Town"
+    },
+    "match_time": "2025-09-06T16:00:00",
+    "scrape_time": "2025-09-06T12:21:04.689108",
+    "probability": {
+      "home_win": 54,
+      "tie": 24,
+      "away_win": 22
+    },
+    "odds": {
+      "home_win": 2.0,
+      "tie": 3.4,
+      "away_win": 3.4
+    },
+    "expected_value": {
+      "home_win": 0.08,
+      "tie": -0.184,
+      "away_win": -0.252
+    },
+    "bet_fraction": {
+      "home_win": 0.08,
+      "tie": -0.077,
+      "away_win": -0.105
+    },
+    "result": null
+  },
+  {
+    "home_team": {
+      "name": "Barnet"
+    },
+    "away_team": {
+      "name": "Shrewsbury Town"
+    },
+    "match_time": "2025-09-06T16:00:00",
+    "scrape_time": "2025-09-06T12:21:04.689108",
+    "probability": {
+      "home_win": 65,
+      "tie": 19,
+      "away_win": 16
+    },
+    "odds": {
+      "home_win": 1.72,
+      "tie": 3.55,
+      "away_win": 4.3
+    },
+    "expected_value": {
+      "home_win": 0.118,
+      "tie": -0.326,
+      "away_win": -0.312
+    },
+    "bet_fraction": {
+      "home_win": 0.164,
+      "tie": -0.128,
+      "away_win": -0.095
+    },
+    "result": null
+  },
+  {
+    "home_team": {
+      "name": "Barrow FC"
+    },
+    "away_team": {
+      "name": "Swindon Town"
+    },
+    "match_time": "2025-09-06T16:00:00",
+    "scrape_time": "2025-09-06T12:21:04.689108",
+    "probability": {
+      "home_win": 31,
+      "tie": 29,
+      "away_win": 40
+    },
+    "odds": {
+      "home_win": 3.0,
+      "tie": 3.25,
+      "away_win": 2.2
+    },
+    "expected_value": {
+      "home_win": -0.07,
+      "tie": -0.058,
+      "away_win": -0.12
+    },
+    "bet_fraction": {
+      "home_win": -0.035,
+      "tie": -0.026,
+      "away_win": -0.1
+    },
+    "result": null
+  },
+  {
+    "home_team": {
+      "name": "Walsall"
+    },
+    "away_team": {
+      "name": "Chesterfield"
+    },
+    "match_time": "2025-09-06T16:00:00",
+    "scrape_time": "2025-09-06T12:21:04.689108",
+    "probability": {
+      "home_win": 31,
+      "tie": 29,
+      "away_win": 40
+    },
+    "odds": {
+      "home_win": 2.75,
+      "tie": 3.15,
+      "away_win": 2.45
+    },
+    "expected_value": {
+      "home_win": -0.147,
+      "tie": -0.087,
+      "away_win": -0.02
+    },
+    "bet_fraction": {
+      "home_win": -0.084,
+      "tie": -0.04,
+      "away_win": -0.014
+    },
+    "result": null
+  },
+  {
+    "home_team": {
+      "name": "Colchester United"
+    },
+    "away_team": {
+      "name": "Crewe Alexandra"
+    },
+    "match_time": "2025-09-06T16:00:00",
+    "scrape_time": "2025-09-06T12:21:04.689108",
+    "probability": {
+      "home_win": 33,
+      "tie": 30,
+      "away_win": 37
+    },
+    "odds": {
+      "home_win": 2.55,
+      "tie": 3.2,
+      "away_win": 2.6
+    },
+    "expected_value": {
+      "home_win": -0.158,
+      "tie": -0.04,
+      "away_win": -0.038
+    },
+    "bet_fraction": {
+      "home_win": -0.102,
+      "tie": -0.018,
+      "away_win": -0.024
+    },
+    "result": null
+  },
+  {
+    "home_team": {
+      "name": "Harrogate Town"
+    },
+    "away_team": {
+      "name": "Crawley Town"
+    },
+    "match_time": "2025-09-06T16:00:00",
+    "scrape_time": "2025-09-06T12:21:04.689108",
+    "probability": {
+      "home_win": 40,
+      "tie": 29,
+      "away_win": 31
+    },
+    "odds": {
+      "home_win": 2.55,
+      "tie": 3.3,
+      "away_win": 2.5
+    },
+    "expected_value": {
+      "home_win": 0.02,
+      "tie": -0.043,
+      "away_win": -0.225
+    },
+    "bet_fraction": {
+      "home_win": 0.013,
+      "tie": -0.019,
+      "away_win": -0.15
+    },
+    "result": null
+  },
+  {
+    "home_team": {
+      "name": "Cambridge United"
+    },
+    "away_team": {
+      "name": "Oldham Athletic"
+    },
+    "match_time": "2025-09-06T16:00:00",
+    "scrape_time": "2025-09-06T12:21:04.689108",
+    "probability": {
+      "home_win": 54,
+      "tie": 24,
+      "away_win": 22
+    },
+    "odds": {
+      "home_win": 1.95,
+      "tie": 3.2,
+      "away_win": 3.75
+    },
+    "expected_value": {
+      "home_win": 0.053,
+      "tie": -0.232,
+      "away_win": -0.175
+    },
+    "bet_fraction": {
+      "home_win": 0.056,
+      "tie": -0.105,
+      "away_win": -0.064
+    },
+    "result": null
+  }
+]

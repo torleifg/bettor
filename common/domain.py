@@ -74,5 +74,6 @@ class Bet(BaseModel):
     home_team: str
     away_team: str
     prediction: Result
+    odds: float
     expected_value: float
     bet_fraction: float
