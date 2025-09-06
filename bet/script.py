@@ -46,7 +46,7 @@ def run(args):
 
     for bet in bets:
         bet_amount = int(bet.bet_fraction * balance)
-        prize = bet.odds * bet_amount
+        prize = int(bet.odds * bet_amount)
 
         table.add_row(
             [bet.home_team, bet.away_team, bet.prediction.value, bet.expected_value, bet.bet_fraction, balance,
