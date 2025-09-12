@@ -42,13 +42,19 @@ python -m venv venv
 Activate the virtual environment:
 
 ```bash
-source env/bin/activate
+source venv/bin/activate
 ```
 
 Install requirements:
 
 ```bash
 pip install -r requirements.txt
+```
+
+### 3. Install Playwright
+
+```bash
+playwright install
 ```
 
 ## Usage
