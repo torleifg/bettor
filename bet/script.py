@@ -45,6 +45,9 @@ def run(args):
                          "Prize"]
 
     for bet in bets:
+        if bet.expected_value < 0.05:
+            continue
+
         bet_amount = int(bet.bet_fraction * balance)
         prize = int(bet.odds * bet_amount)
 

@@ -16,7 +16,7 @@ def run(args):
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
-        page.set_default_timeout(5000)
+        page.set_default_timeout(10000)
 
         page.goto(f"https://www.norsk-tipping.no/sport/tipping/spill?day={coupon.value}")
         page.wait_for_selector("body")
