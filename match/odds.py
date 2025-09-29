@@ -8,6 +8,12 @@ from common.domain import Match, Odds
 
 date_time_format = "Dato: %d %b. %Y %H:%M."
 
+norwegian_to_english_months = {
+    'jan.': 'jan.', 'feb.': 'feb.', 'mar.': 'mar.', 'apr.': 'apr.',
+    'mai.': 'may.', 'jun.': 'jun.', 'jul.': 'jul.', 'aug.': 'aug.',
+    'sep.': 'sep.', 'okt.': 'oct.', 'nov.': 'nov.', 'des.': 'dec.'
+}
+
 
 def scrape(page: Page, match: Match, days: Set[int]):
     iframe_locator = page.locator("#sportsbookid")
@@ -53,7 +59,15 @@ def scrape(page: Page, match: Match, days: Set[int]):
         away_team_matcher = SequenceMatcher(None, match.away_team.name, away_team)
 
         date_time_string = info[2].inner_text()
-        date_time_object = datetime.strptime(date_time_string, date_time_format)
+
+        for nor, eng in norwegian_to_english_months.items():
+            if nor in date_time_string:
+                corrected_string = date_time_string.replace(nor, eng)
+                break
+        else:
+            corrected_string = date_time_string
+
+        date_time_object = datetime.strptime(corrected_string, date_time_format)
 
         if home_team_matcher.ratio() > 0.5 and away_team_matcher.ratio() > 0.5 and date_time_object.day in days:
             match.match_time = date_time_object
