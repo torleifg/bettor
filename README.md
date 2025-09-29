@@ -8,12 +8,6 @@ Install pyenv:
 brew install pyenv
 ```
 
-Install xz (if using M1 or M2 Mac):
-
-```bash
-brew install xz
-```
-
 Install Python:
 
 ```bash
@@ -26,8 +20,9 @@ Switch to Python version:
 pyenv local 3.13.5     
 ```
 
-Verify Python version
+Verify Python and version
 ```bash
+which python
 python --version  
 ```
 
@@ -60,13 +55,13 @@ playwright install
 ## Usage
 
 ```python
-python main.py matches --coupon MIDWEEK --days 4 5
+python main.py matches --coupon <MIDWEEK|SATURDAY|SUNDAY> --days <DAYS_OF_THE_MONTH_FOR_THE_COUPON>
 ```
 
 ```python
-python main.py predictions --filename data/matches_36_2025_MIDWEEK.json
+python main.py predictions --filename <DATA_FILE_PATH>
 ```
 
 ```python
-python main.py bets --filename data/matches_36_2025_MIDWEEK.json --balance 500
+python main.py bets --filename <DATA_FILE_PATH> --balance <STARTING_BALANCE>
 ```
