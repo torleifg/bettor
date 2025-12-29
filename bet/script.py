@@ -37,23 +37,23 @@ def run(args):
                             odds=match.odds.away_win,
                             expected_value=match.expected_value.away_win, bet_fraction=match.bet_fraction.away_win))
 
-    bets.sort(key=lambda b: b.expected_value, reverse=True)
+    bets.sort(key=lambda b: b.bet_fraction, reverse=True)
 
     table = PrettyTable()
 
-    table.field_names = ["Home team", "Away team", "Result", "Expected Value", "Bet Fraction", "Balance", "Bet Amount",
-                         "Prize"]
+    table.field_names = ["Home team", "Away team", "Result", "Odds", "Expected Value", "Bet Fraction", "Balance",
+                         "Bet Amount", "Prize"]
 
     for bet in bets:
-        if bet.expected_value < 0.05:
+        if bet.expected_value < 0.05 or bet.odds > 4.0:
             continue
 
-        bet_amount = int(bet.bet_fraction * balance)
+        bet_amount = int((bet.bet_fraction * 0.5) * balance)
         prize = int(bet.odds * bet_amount)
 
         table.add_row(
-            [bet.home_team, bet.away_team, bet.prediction.value, bet.expected_value, bet.bet_fraction, balance,
-             bet_amount, prize])
+            [bet.home_team, bet.away_team, bet.prediction.value, bet.odds, bet.expected_value, bet.bet_fraction,
+             balance, bet_amount, prize])
 
         balance -= bet_amount
 
