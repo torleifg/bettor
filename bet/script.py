@@ -1,3 +1,4 @@
+import configparser
 import json
 
 from prettytable import PrettyTable
@@ -10,6 +11,28 @@ from common.domain import Match, Bet, Result
 def run(args):
     filename = args.filename
     balance = args.balance
+
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+
+    try:
+        min_expected_value = float(config['Betting']['min_expected_value'])
+        max_odds = float(config['Betting']['max_odds'])
+        kelly_fraction = float(config['Betting']['kelly_fraction'])
+    except KeyError as e:
+        print(f"Error loading configuration: Missing key {e}")
+        return
+    except ValueError as e:
+        print(f"Error loading configuration: Invalid value {e}")
+        return
+    except Exception as e:
+        print(f"Error loading configuration: {e}")
+
+        min_expected_value = 0.05
+        max_odds = 4.0
+        kelly_fraction = 0.5
+        print(
+            f"Using default values: min_expected_value={min_expected_value}, max_odds={max_odds}, kelly_fraction={kelly_fraction}")
 
     with open(filename, "r") as f:
         data = json.load(f)
@@ -45,10 +68,10 @@ def run(args):
                          "Bet Amount", "Prize"]
 
     for bet in bets:
-        if bet.expected_value < 0.05 or bet.odds > 4.0:
+        if bet.expected_value < min_expected_value or bet.odds > max_odds:
             continue
 
-        bet_amount = int((bet.bet_fraction * 0.5) * balance)
+        bet_amount = int((bet.bet_fraction * kelly_fraction) * balance)
         prize = int(bet.odds * bet_amount)
 
         table.add_row(
